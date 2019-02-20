@@ -1,0 +1,48 @@
+
+Spring is made up of a variety of components. A component is a set of related functionality that resides in a jar file
+of its own.
+
+The components that will be used in spring are:
+
+- The Core: This contains a lot of the gears that will turn the Spring engine.
+- The Beans: The part of the Spring framework that allows any java object to be created an used in what is known as a
+             servlet container.  It allows the object you have created to be usable and reusable by the web server.
+             - The Servlet Container is the container of the entire running Java application on the web server.
+- Context Components: Give us leverage in configuring our application.
+                     - @Configuration: apply to classes that contain application configuration code.
+                     - @Controller: Applied to a class that we write to handle specific URI's.
+                     - @ComponentScan: Tells the Spring framework to scan our java classes for things like controllers.
+- SpEL: or Spring Expression Language is used in HTML templates that allows us to handle java data for display purposes.,
+        similar to Handlebars or Jinja.
+- AOP: Aspect Oriented Programming, Allows us to cleanly apply functionality to many, or all parts of our web app.  Such as
+        adding a security check to verify that a user is logged into the site before performing any tasks like uploading
+        new gifs, or marking gifs as favorites.
+
+- Dispatcher Servlet:  is the applications "usher".  This component receives requests from the web server, and dispatches them
+                        according to our configuration and code. When our code finishes processing the request, the dispatcher
+                        ushers the response back to the web server so it can get back to the client.
+- Web: Allows us to capture a request to a specific resource and take action accordingly. For example, if a nav link is clicked
+        for categories, we could capture the URI, and then respond with the page that shows them all the categories.
+
+
+Spring Controller:
+    A controllers job is a java object whose job is to handle requests to certain URI's.
+    Annotations are applied to methods within this class to indicate which URI's should be handled.
+
+
+URI - Uniform Resource Identifier
+    - URI does not have to include the things a URL does.
+URL - Uniform Resource Locator
+    - Is an address that includes a method for locating a resource, with a protocol like HTTP or FTP
+    - Will include a Hostname like teamtreehouse.com
+
+
+Model - store the underlying data, in the case of this app, all the gif details.
+Controller - process user actions, fetching and altering the underlying model data as needed and providing the model
+             data to associated views.
+Views - Presents model data to users and expose a UI.
+
+In This Project:
+    GIF objects are the model
+    Thymeleaf templates are the views
+    GifController is our controller
